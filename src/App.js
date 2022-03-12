@@ -34,8 +34,9 @@ const App = () => {
  // Render Covalent data Methods
 const getData = async () => {
   //Using fetch
-  const response = await fetch("https://api.covalenthq.com/v1/chains/status/?key=ckey_c2ff142ae0e243359fcfde35554")
-  //https://api.covalenthq.com/v1/:chain_id/tokens/:contract_address/nft_transactions/:token_id/?&key=ckey_c2ff142ae0e243359fcfde35554
+  const response = await fetch("https://api.covalenthq.com/v1/:chain_id/tokens/:contract_address/nft_transactions/:token_id/?&key=ckey_c2ff142ae0e243359fcfde35554")
+ 
+  // https://api.covalenthq.com/v1/chains/status/?key=ckey_c2ff142ae0e243359fcfde35554
   const data = await response.json()
   console.log(response.data.data);
   setItems(data.data.items)
@@ -44,7 +45,7 @@ const getData = async () => {
   //using axios
   /**
   try {
-    const response = await axios.get('https://api.covalenthq.com/v1/chains/status/?key=ckey_c2ff142ae0e243359fcfde35554');
+    const response = await axios.get('https://api.covalenthq.com/v1/:chain_id/tokens/:contract_address/nft_transactions/:token_id/?&key=ckey_c2ff142ae0e243359fcfde35554);
     console.log(response.data.data);
     setItems(response.data.data.items)
        } catch (err) {
