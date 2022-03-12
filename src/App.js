@@ -2,8 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { ethers } from 'ethers';
 //import axios from "axios";
 import './App.css';
-//import './covalant_scripts.js';
-//import './style.css';
 import twitterLogo from './assets/twitter-logo.svg';
 import SelectCharacter from './Components/SelectCharacter';
 import myEpicGame from './utils/MyEpicGame.json';
@@ -25,7 +23,54 @@ const App = () => {
   const [characterNFT, setCharacterNFT] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
-  //const [data, setData] = useState(null);
+  const [items, setItems] = useState([]);
+
+  useEffect(() => {
+      getData()
+  
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
+ // Render Covalent data Methods
+const getData = async () => {
+  //Using fetch
+  const response = await fetch("https://api.covalenthq.com/v1/chains/status/?key=ckey_c2ff142ae0e243359fcfde35554")
+  //https://api.covalenthq.com/v1/:chain_id/tokens/:contract_address/nft_transactions/:token_id/?&key=ckey_c2ff142ae0e243359fcfde35554
+  const data = await response.json()
+  console.log(response.data.data);
+  setItems(data.data.items)
+  
+  
+  //using axios
+  /**
+  try {
+    const response = await axios.get('https://api.covalenthq.com/v1/chains/status/?key=ckey_c2ff142ae0e243359fcfde35554');
+    console.log(response.data.data);
+    setItems(response.data.data.items)
+       } catch (err) {
+    // Handle Error Here
+    console.error(err);
+   }
+   **/
+   return (
+    <div className="App">
+      {console.log(items)}
+      Welcome 
+      <ul>
+        {items.map(item => (
+          <li key={item.chain_id}>
+            {item.name}
+          </li>
+        ))}
+      </ul>
+      </div>
+  );
+
+}
+
+
+
+
 
   // Actions
   const checkIfWalletIsConnected = async () => {
@@ -61,6 +106,7 @@ const App = () => {
         setIsLoading(false);
   };
 
+ 
 // Render Methods
 const renderContent = () => {
    /*
@@ -101,8 +147,7 @@ const renderContent = () => {
 
 const checkNetwork = async () => {
   try { 
-    if (window.ethereum.networkVersion !== '69') {
-      alert("Please connect to Optimistic Kovan!")
+    if (window.ethereum.networkVersion !== '4') {
       //alert("Please connect to Rinkeby!")
     }
   } catch(error) {
@@ -198,13 +243,19 @@ useEffect(() => {
         {/* This is where our button and image code used to be!
          *	Remember we moved it into the render method.
          */}
-        {renderContent()}
-        <p className="header gradient-text">⚔️ How to play⚔️</p>
+          {renderContent()}
+          <p className="header gradient-text">⚔️ How to play⚔️</p>
           <p className="sub-text">Connect you wallet</p>
           <p className="sub-text">Mint a character from our Marketplace</p>
           <p className="sub-text">Enagege in the quest to get the lucky food slide</p>
           <p className="sub-text">You win if you get the food before your life decresaes to nothing</p> 
-          <p className="sub-text">You earn a reward</p>    
+          <p className="sub-text">You earn a reward</p>
+
+          {/* Covalent frontend!
+         *	moving to a new method.
+         */}
+
+          {getData()}
 
         </div>  
 
