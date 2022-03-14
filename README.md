@@ -1,5 +1,5 @@
-### Soldier Ant Metaverse Game
-# An epic metaverse game that is simple to play and earn. every player finds it easy to play and earn NFT as well as token
+# Soldier Ant Colony Metaverse Game
+### An epic metaverse game that is simple to play and earn. every player finds it easy to play and earn NFT as well as token
 
 ## Description
 
@@ -14,7 +14,7 @@ npx hardhat node
 npx hardhat run scripts/deploy.js --network localhost
 npm run build
 
-# to deploy to optimism or any other blockchain, update hardhat.config
+### to deploy to optimism or any other blockchain, update hardhat.config
 npx hardhat run scripts/deploy.js --network optimism-kovan
 or 
 npx hardhat run scripts/deploy.js --network rinkeby
@@ -36,11 +36,11 @@ Get optimism kovan faucets to explore the game from https://faucet.paradigm.xyz/
 ## Protocols Used in this Project
 IPFS/Filecoin
 Pinata
-NFTPort
+   NFTPort
 Covalent, 
-Valist 
+   Valist 
 Optimism (Quixotec), 
-Lighthouse
+   Lighthouse
 
 ## Tools Used in this Project
 React Js
@@ -110,7 +110,7 @@ Transaction: https://mumbai.polygonscan.com/tx/0xbef56c3a46250862b15032e7ddb159a
 CID pushed to chain
 File Deployed, visit following url to view content!
 Visit: https://gateway.lighthouse.storage/ipfs/Qmaxc7iEKNGCFaPwCA8noaC67TxtFfj3waTBU8Wpdhvf5p
-       https://ipfs.io/ipfs/Qmaxc7iEKNGCFaPwCA8noaC67TxtFfj3waTBU8Wpdhvf5p
+https://ipfs.io/ipfs/Qmaxc7iEKNGCFaPwCA8noaC67TxtFfj3waTBU8Wpdhvf5p
 CID: Qmaxc7iEKNGCFaPwCA8noaC67TxtFfj3waTBU8Wpdhvf5p
 augustine@augustine-HP-ENVY:~$ 
 
@@ -123,15 +123,9 @@ An epic metaverse game that is simple to play and earn. every player finds it ea
 https://gateway.valist.io/ipfs/QmUyTCnZXRJkyzv9MD6oVW7x4B3xocjceWv6jc3VqXExx7
 
 
-Covalent API - Key
-ckey_c2ff142ae0e243359fcfde35554
-
 
 Final contract address on Optmism for Quixotic
 0xe078fe7A93017F8e18c1C52E79632d0B94c56c26
 
 Rinkeby
 0xA2F763342Bc9dfa21471C24496a700DB61D8Cde4
-
-localhost
-0x610178dA211FEF7D417bC0e6FeD39F05609AD788
